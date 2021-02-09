@@ -4,22 +4,27 @@ import random
 turtle.colormode(255)
 
 
-class Player():
+class Player(Turtle):
     def __init__(self):
-        colors = [(138, 34, 179),(179, 34, 147),(179, 34, 75),(179, 66, 34),(179, 138, 34),(147, 179, 34)]
+        super().__init__()
         self.player = Turtle()
+        colors = [(138, 34, 179),(179, 34, 147),(179, 34, 75),(179, 66, 34),(179, 138, 34),(147, 179, 34)]
         self.player.shape('turtle')
         self.player.color(random.choice(colors))
         self.player.speed('fastest')
-        x = -350+(random.randint(10,60))
-        y = -350+(random.randint(10,60))
+        x = -315+(random.randint(-10,10))
+        y = -315+(random.randint(-10,10))
         start_position = (x, y)
         self.player.penup()
         self.player.goto(start_position)
-        self.player.setheading(random.randint(0, 300))
+        print(self.player.pos())
+
 
     def forward(self, distance):
         self.player.setheading(0)
         self.player.forward(distance)
+
+    def pos(self):
+        self.player.pos()
 
 

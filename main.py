@@ -5,7 +5,7 @@
 # 15, 25, etc.), they land on a ladder and move forward 9 spaces. If they land on a square that ends
 # in 0 (e.g. 10, 20, 30, etc.), they land on a snake and go back to the start. The game will be
 # explained using text commentary that you should print to the screen.
-import turtle
+
 from turtle import *
 from grid import Grid
 from players import Player
@@ -19,24 +19,29 @@ screen.screensize(800, 800)
 def coordinates():
     """returns the coordinates for each
  square's center starting from the bottom left to top right"""
-    position = []
+    pozition = []
     x = -315
     y = -315
     for row in range(10):
         for column in range(10):
-            position.append((x,y))
+            pozition.append((x,y))
             x = x + 71
         y = y +71
         x = -315
-    return position
+    return pozition
 positions = coordinates()
 print(positions)
 print(len(positions))
 dice = random.randint(1, 6)
 screen.title('Snake and Ladders')
-grid = Grid()
+# grid = Grid()
 player1 = Player()
-player2 = Player()
+player3 = Player()
+
+# for turns in range(9):
+#     for player in (player1, player3):
+#         time.sleep(1)
+#         player.forward(71)
 
 
 

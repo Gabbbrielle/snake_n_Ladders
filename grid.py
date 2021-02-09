@@ -4,6 +4,7 @@ class Grid():
     def __init__(self):
 
         self.grid = Turtle()
+        self.grid.ht()
         self.grid.penup()
         self.grid.shape('turtle')
         self.grid.speed('fastest')

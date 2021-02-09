@@ -19,29 +19,32 @@ screen.screensize(800, 800)
 def coordinates():
     """returns the coordinates for each
  square's center starting from the bottom left to top right"""
-    pozition = []
+    position = []
     x = -315
     y = -315
     for row in range(10):
         for column in range(10):
-            pozition.append((x,y))
+            position.append((x,y))
             x = x + 71
         y = y +71
         x = -315
-    return pozition
+    return position
 positions = coordinates()
 print(positions)
 print(len(positions))
 dice = random.randint(1, 6)
 screen.title('Snake and Ladders')
-# grid = Grid()
+grid = Grid()
 player1 = Player()
-player3 = Player()
+player2 = Player()
 
-# for turns in range(9):
-#     for player in (player1, player3):
-#         time.sleep(1)
-#         player.forward(71)
+for turns in range(9):
+    for player in (player1, player2):
+        player.forward(71)
+        print(player.pos())
+        time.sleep(1)
+
+
 
 
 
